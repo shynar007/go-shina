@@ -13,6 +13,8 @@ import (
 var serverID string
 
 func main() {
+	os.Setenv("PORT", "8081")
+
 	rand.Seed(time.Now().UTC().UnixNano())
 	serverID = strconv.Itoa(rand.Intn(10) + 100)
 	logger := log.New(os.Stdout, "", log.Lmicroseconds)
